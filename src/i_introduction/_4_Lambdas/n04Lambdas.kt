@@ -2,6 +2,7 @@ package i_introduction._4_Lambdas
 
 import util.TODO
 import util.doc4
+import java.util.function.Predicate
 
 fun example() {
 
@@ -22,4 +23,6 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+fun task4(collection: Collection<Int>): Boolean {
+    return collection.stream().anyMatch { it % 2 == 0 }
+}
